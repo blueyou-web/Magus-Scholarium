@@ -91,7 +91,7 @@
 
 //여기를 수정하세요
     const hardcodedFirebaseConfig = {
- apiKey: "AIzaSyAR2WvP950c1Vejt3y2ZE5w46UG-a852uA",
+   apiKey: "AIzaSyAR2WvP950c1Vejt3y2ZE5w46UG-a852uA",
   authDomain: "macol-1b220.firebaseapp.com",
   databaseURL: "https://macol-1b220-default-rtdb.firebaseio.com",
   projectId: "macol-1b220",
@@ -99,10 +99,9 @@
   messagingSenderId: "703197847647",
   appId: "1:703197847647:web:882b0cecb3fabe560f3bea"
 };
-
+    
     const ACTIVE_USER_STORAGE_KEY = 'miniTwitterActiveUser';
     const LAST_CHECKED_NOTIFICATIONS_KEY = 'miniTwitterLastCheckedNotifications';
-    // [다크모드 추가] 로컬 스토리지 키
     const DARK_MODE_STORAGE_KEY = 'miniTwitterDarkMode';
 
     let firebaseConfig, initialAuthToken, canvasAppId;
@@ -121,11 +120,11 @@
         initialAuthToken = null;
     }
 
-    const { initializeApp, getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged, signOut,
-            getFirestore, collection, query, orderBy, onSnapshot, addDoc, serverTimestamp, doc, deleteDoc, updateDoc, getDoc, setDoc } = window.firebase || {};
-
+const { initializeApp, getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged, signOut,
+        getFirestore, collection, query, where, orderBy, onSnapshot, addDoc, serverTimestamp, doc, deleteDoc, updateDoc, getDoc, setDoc } = window.firebase || {};
     const getInitialActiveUser = () => localStorage.getItem(ACTIVE_USER_STORAGE_KEY);
     
+//그룹과 인원추가를 만지고 싶다면 여기를 수정하세요
 const MOCK_GROUPS = [
     { id: 'dev', name: '에이 팀', icon: 'A' },
     { id: 'design', name: '비 팀', icon: 'B' },
